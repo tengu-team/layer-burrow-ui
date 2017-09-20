@@ -1,0 +1,13 @@
+[Unit]
+Description=BurrowUI system
+Requires=After=burrow.service
+
+[Service]
+ExecStart={{node_path}} {{server_path}}
+Restart=always
+RestartSec=10
+User=ubuntu
+Group=<ubuntu
+
+[Install]
+WantedBy=multi-user.target
