@@ -75,8 +75,13 @@ def install_burrow(http):
 @when('burrow_ui.installed')
 @when_not('burrow_ui.started')
 def start():
-    call(['systemctl', 'enable', 'burrowui.service'])  
+    call(['systemctl', 'enable', 'burrowui.service'])
     call(['systemctl', 'start', 'burrowui.service'])
     open_port(3000)
     status_set('active', 'ready (:3000)')
     set_state('burrow_ui.started')
+
+
+@when('website.available')
+def configure_website(website):
+    website.configure(port=3000)

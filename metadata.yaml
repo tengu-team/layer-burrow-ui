@@ -10,4 +10,7 @@ requires:
   http:
     interface: http
     scope: container
+provides:
+  website:
+    interface: http
 series: ['xenial']
