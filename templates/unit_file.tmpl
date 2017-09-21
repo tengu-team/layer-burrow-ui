@@ -3,6 +3,9 @@ Description=BurrowUI system
 PartOf=burrow.service
 
 [Service]
+{% for env_var in env_vars -%}
+Environment="{{env_var}}"
+{% endfor -%}
 ExecStart={{node_path}} {{server_path}}
 Restart=always
 RestartSec=10

@@ -5,4 +5,9 @@ options:
   install_keys:
     default: |
       - '68576280'
+  port:
+    type: int
+    default: 3000
+    description: |
+      "Port for BurrowUI"
 
